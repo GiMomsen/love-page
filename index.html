@@ -232,7 +232,7 @@
 </head>
 <body>
 
-  <audio id="music" autoplay loop>
+  <audio id="music" loop>
     <source src="musica.mp3" type="audio/mp3">
   </audio>
 
@@ -272,6 +272,8 @@
 
   <script>
     function showMessage() {
+      music.play();
+
       const existing = document.querySelector('.popup');
       if(existing) existing.remove();
 
