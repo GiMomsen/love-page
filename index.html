@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pra Você ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ff6b81, #ff4757, #ff758c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: rgba(255,255,255,0.7);
+      animation: float 8s linear infinite;
+      font-size: 20px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .card {
+      transition: 0.4s ease;
+      position: relative;
+      z-index: 2;
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 28px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      cursor: default;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    p:hover {
+      transform: scale(1.02);
+      transition: 0.3s ease;
+    }
+
+    h1:hover {
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .highlight {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .button {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: white;
+      color: #ff4757;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .button:hover {
+      letter-spacing: 1px;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .popup-content {
+      width: 90%;
+      max-width: 400px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 30px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .popup-content h2 {
+      margin-bottom: 15px;
+    }
+
+    .popup-content p {
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .popup-content button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 999px;
+      background: white;
+      color: #ff4757;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .popup-content button:hover {
+      transform: scale(1.05);
+    }
+
+    @media(max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  @keyframes fadeSpark {
+      from {
+        opacity: 1;
+        transform: scale(1);
+      }
+      to {
+        opacity: 0;
+        transform: scale(2.5);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="music" autoplay loop>
+    <source src="musica.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="hearts"></div>
+
+  <div class="card">
+    <h1 class="pulse">Descansa direitinho ❤️</h1>
+
+    <p>
+      Eu sei que sua garganta tá ruim hoje… mas eu precisava te dizer uma coisa.
+    </p>
+
+    <p>
+      Eu amo sua voz. Amo o jeito que ela muda quando você tá feliz, o jeito que você fala comigo e como consegue deixar meu dia completamente diferente só aparecendo.
+    </p>
+
+    <p>
+      E talvez seja um pouco egoísta da minha parte pensar nisso agora… mas eu tô com saudades de ouvir você.
+    </p>
+
+    <p class="highlight">
+      Você faz eu me sentir leve de um jeito que poucas pessoas conseguem.
+    </p>
+
+    <a class="button" href="#" onclick="showMessage()">
+      Clique aqui pra um recado 🩷
+    </a>
+
+    <div style="margin-top:20px;">
+      <button class="button" onclick="toggleMusic()">🎵 Música</button>
+    </div>
+
+    <div class="footer">
+      Feito com carinho por alguém que pensa muito em você.
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      const existing = document.querySelector('.popup');
+      if(existing) existing.remove();
+
+      const popup = document.createElement('div');
+      popup.classList.add('popup');
+      popup.innerHTML = `
+        <div class="popup-content">
+          <h2>🩷 Recado pra você</h2>
+          <p>
+            Eu amo quando você fala comigo.
+            E acho doido como sua presença consegue mudar completamente meu humor.
+            Tô com saudades da sua voz… e de você também.
+          </p>
+          <button onclick="this.parentElement.parentElement.remove()">
+            Fechar
+          </button>
+        </div>
+      `;
+
+      document.body.appendChild(popup);
+    }
+
+    const heartsContainer = document.querySelector('.hearts');
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+      heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+    setInterval(createHeart, 300);
+
+    const music = document.getElementById('music');
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+
+    document.body.addEventListener('mousemove', (e) => {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤';
+      heart.style.position = 'absolute';
+      heart.style.left = e.pageX + 'px';
+      heart.style.top = e.pageY + 'px';
+      heart.style.color = 'rgba(255,255,255,0.85)';
+      heart.style.fontSize = (Math.random() * 10 + 10) + 'px';
+      heart.style.pointerEvents = 'none';
+      heart.style.zIndex = '999';
+      heart.style.animation = 'fadeSpark 0.8s linear forwards';
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 800);
+    });
+  </script>
+
+</body>
+</html>
